@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jonathan Deng – CS @ UF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --accent: #0052cc;
+      --bg: #ffffff;
+      --text: #222;
+      --muted: #666;
+      --border: #e5e7eb;
+      --radius: 8px;
+      --gap: 1.2rem;
+      --max-width: 900px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { padding: 3rem 1rem; text-align: center; background: linear-gradient(135deg, var(--accent) 0%, #003da5 100%); color: #fff; }
+    header h1 { font-size: 2.4rem; margin-bottom: .3rem; }
+    header p { font-size: 1.1rem; opacity: .9; }
+    nav { display: flex; justify-content: center; gap: var(--gap); padding: 1rem; background: var(--bg); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .container { max-width: var(--max-width); margin: auto; padding: 2rem 1rem; }
+    h2 { margin: 2.5rem 0 1rem; color: var(--accent); }
+    .card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; margin-bottom: 1.2rem; }
+    .card h3 { margin-bottom: .3rem; }
+    .sub { color: var(--muted); font-size: .9rem; margin-bottom: .5rem; }
+    ul { padding-left: 1.2rem; }
+    .skills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+    .skills li { background: #eef2ff; color: var(--accent); padding: .25rem .6rem; border-radius: var(--radius); list-style: none; font-size: .85rem; }
+    footer { text-align: center; padding: 2rem 1rem; font-size: .9rem; color: var(--muted); }
+    @media (max-width: 600px) { header h1 { font-size: 2rem; } }
+  </style>
+</head>
+
+<body>
+  <!-- HERO -->
+  <header>
+    <h1>Jonathan Deng</h1>
+    <p>Computer Science @ University of Florida | GPA 3.90/4.00</p>
+    <p>
+      <a href="mailto:jonathandeng@ufl.edu" style="color:#fff;">Email</a> |
+      <a href="https://linkedin.com/in/jonathan-deng" target="_blank" style="color:#fff;">LinkedIn</a> |
+      <a href="https://github.com/jonathandeng" target="_blank" style="color:#fff;">GitHub</a>
+    </p>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="container">
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I’m a junior at the University of Florida pursuing a B.S. in Computer Science (Dean’s List 4 semesters).
+        I love turning ideas into products—whether it’s a React web app, a React-Native mobile experience, or a Python trading bot.
+        When I’m not coding you’ll find me teaching STEM to middle-schoolers or volunteering with Engineers Without Borders.
+      </p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="card">
+        <h3>Website Design Team – Engineers Without Borders UF</h3>
+        <p class="sub">Jun 2023 – Present | Gainesville, FL</p>
+        <ul>
+          <li>Built responsive UI components in React.js, HTML & CSS; redesigned site layout with 4-person team using Git workflow.</li>
+          <li>Incorporated user feedback and UI/UX best practices to boost visitor engagement.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Teaching Fellow – Breakthrough Miami</h3>
+        <p class="sub">Jun 2025 – Aug 2025 | Boca Raton, FL</p>
+        <ul>
+          <li>Led CS lessons with Scratch & LEGO Mindstorms; raised average unit-exam scores by 60 %.</li>
+          <li>Taught 6th-grade math, managed classrooms, and planned district-wide events.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>End-User Support Intern – PBC School District</h3>
+        <p class="sub">May 2023 – Aug 2023 | West Palm Beach, FL</p>
+        <ul>
+          <li>Resolved 100+ laptop/PC tickets across 190 k-student district; cut average resolution time significantly.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Featured Projects</h2>
+
+      <div class="card">
+        <h3>Vitamin-Deficiency Predictor – SHPE Hackathon (Health Award)</h3>
+        <p class="sub">React, Next.js, Scikit-learn, Python</p>
+        <ul>
+          <li>Guided questionnaire web app that predicts possible vitamin deficiencies using KNN & feature scaling.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>BeFit – Social Fitness App</h3>
+        <p class="sub">React Native, Expo, MongoDB, Node.js</p>
+        <ul>
+          <li>BeReal-inspired mobile app for students to share real-time workout photos; secure auth, camera integration, persistent storage.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Algorithmic Trading Bot</h3>
+        <p class="sub">Python, Backtrader, yfinance, pandas, numpy</p>
+        <ul>
+          <li>Momentum-based bot back-tested on 4+ years of data; custom signals, dynamic stop-loss & take-profit.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <ul class="skills">
+        <li>Python</li><li>C++</li><li>JavaScript</li><li>Swift</li><li>HTML/CSS</li>
+        <li>React / React Native</li><li>Next.js</li><li>Expo</li><li>UIKit</li>
+        <li>MongoDB</li><li>Git / GitHub</li><li>Scikit-learn</li><li>pandas / numpy</li>
+        <li>Backtrader</li><li>REST APIs</li><li>Unit Testing</li><li>Agile / Scrum</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:jonathandeng@ufl.edu">jonathandeng@ufl.edu</a><br>
+        LinkedIn: <a href="https://linkedin.com/in/jonathan-deng" target="_blank">linkedin.com/in/jonathan-deng</a><br>
+        GitHub: <a href="https://github.com/jonathandeng" target="_blank">github.com/jonathandeng</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>© 2025 Jonathan Deng. Built with plain HTML/CSS.</footer>
+</body>
+</html>
