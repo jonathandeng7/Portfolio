@@ -115,12 +115,10 @@ export function About() {
             TL;DR
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            I got into coding because I wanted to build things that actually <em className="text-foreground not-italic font-medium">do</em> something. 
-            That curiosity led me from tinkering with web apps to winning hackathons and teaching kids how to code. 
-            These days I'm most excited about{' '}
-            <span className="text-foreground font-medium">accessibility tech</span> and{' '}
-            <span className="text-foreground font-medium">AI-powered tools</span> that make life easier for people. 
-            When I'm not coding, I'm probably playing basketball or trying a new bubble tea spot. 🧋
+            I got into coding because I wanted to build things that I can see have direct impact. 
+            That curiosity led me from tinkering with web apps to building apps in hackathons and teaching kids how to code. 
+            These days I'm most excited about accessibility tech and AI-powered tools that make life easier for people. 
+            When I'm not coding, I'm probably playing football or spending my time outdoors. 
           </p>
         </motion.div>
       </div>

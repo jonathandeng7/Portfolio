@@ -7,28 +7,24 @@ export function Skills() {
   const skillCategories = [
     {
       title: 'Languages',
-      subtitle: 'The ones I speak fluently',
       icon: Code,
       skills: ['Python', 'C++', 'JavaScript', 'Swift', 'TypeScript', 'HTML/CSS'],
       color: 'accent-coral'
     },
     {
       title: 'Frameworks',
-      subtitle: 'My favorite tools',
       icon: Layers,
       skills: ['React Native', 'UIKit', 'Expo', 'pandas', 'numpy'],
       color: 'accent-sage'
     },
     {
       title: 'Tools',
-      subtitle: 'What I use daily',
       icon: Wrench,
       skills: ['VS Code', 'GitHub', 'Xcode', 'MongoDB', 'REST APIs', 'TensorFlow'],
       color: 'accent-ochre'
     },
     {
       title: 'How I Work',
-      subtitle: 'Process stuff',
       icon: GitBranch,
       skills: ['Agile', 'Scrum', 'Git Flow'],
       color: 'accent-blue'
@@ -73,16 +69,14 @@ export function Skills() {
               <div className="flex items-center gap-4 mb-2">
                 <div 
                   className="w-12 h-12 rounded-xl flex items-center justify-center"
-                  style={{ backgroundColor: `var(--${category.color})`, opacity: 0.15 }}
+                  style={{ backgroundColor: `var(--${category.color})`, opacity: 0.9 }}
                 >
                   <category.icon 
-                    className="w-6 h-6" 
-                    style={{ color: `var(--${category.color})` }} 
+                    className="w-6 h-6 text-white" 
                   />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-foreground">{category.title}</h3>
-                  <p className="text-sm text-muted-foreground">{category.subtitle}</p>
                 </div>
               </div>
               

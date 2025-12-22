@@ -80,38 +80,30 @@ export function Contact() {
           </p>
         </motion.div>
 
-        {/* Contact Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {/* Contact Icons */}
+        <div className="flex justify-center items-center gap-8 flex-wrap">
           {contactLinks.map((contact, index) => (
             <motion.a 
               key={contact.label}
               href={contact.href}
               target={contact.href.startsWith('http') ? '_blank' : undefined}
               rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.02, y: -4 }}
-              className="bg-background clean-border rounded-2xl p-5 group cursor-pointer"
+              whileHover={{ scale: 1.2, y: -8 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-16 h-16 rounded-full flex items-center justify-center group cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl"
+              style={{ 
+                backgroundColor: `var(--${contact.color})`, 
+                opacity: 0.9 
+              }}
+              title={`${contact.description} - ${contact.value}`}
             >
-              <div className="flex items-center gap-4">
-                <div 
-                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:rotate-6 transition-transform duration-300"
-                  style={{ backgroundColor: `var(--${contact.color})`, opacity: 0.15 }}
-                >
-                  <contact.icon 
-                    className="w-5 h-5" 
-                    style={{ color: `var(--${contact.color})` }} 
-                  />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{contact.description}</p>
-                  <p className="text-foreground font-semibold group-hover:text-accent-coral transition-colors">
-                    {contact.value}
-                  </p>
-                </div>
-              </div>
+              <contact.icon 
+                className="w-7 h-7 text-white group-hover:text-white/90 transition-colors" 
+              />
             </motion.a>
           ))}
         </div>

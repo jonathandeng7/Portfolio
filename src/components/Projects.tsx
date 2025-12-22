@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 export function Projects() {
   const projects = [
     {
-      title: 'Health Deficiency Detector',
+      title: 'VitaGuide',
       event: 'SHPE Code For Change Hackathon',
       badge: '🏆 Health Award Winner',
       tech: ['React', 'Next.js', 'Scikit-learn', 'Python'],
@@ -54,7 +54,7 @@ export function Projects() {
         'Designed and built a MongoDB backend to handle user data and social interactions.'
       ],
       icon: Award,
-      color: 'accent-coral'
+      color: 'accent-blue'
     },
     {
       title: 'Art Beyond Sight',
@@ -68,7 +68,7 @@ export function Projects() {
         'Conducted user testing with visually impaired individuals during the hackathon to gather feedback and iterate on the design.'
       ],
       icon: Eye,
-      color: 'accent-sage'
+      color: 'accent-emerald'
     }
   ]
 
@@ -86,7 +86,15 @@ export function Projects() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <span className="text-accent-ochre font-medium text-sm uppercase tracking-wider">Projects</span>
+          <div className="flex items-center gap-4 mb-4">
+            <div 
+              className="w-12 h-12 rounded-xl flex items-center justify-center"
+              style={{ backgroundColor: 'var(--accent-ochre)', opacity: 0.9 }}
+            >
+              <Award className="w-6 h-6 text-white" />
+            </div>
+            <span className="text-accent-ochre font-medium text-sm uppercase tracking-wider">Projects</span>
+          </div>
           <h2 className="text-4xl sm:text-5xl leading-tight mt-2 text-foreground">
             <span className="font-serif italic">Featured</span>{' '}
             <span className="font-bold">Projects</span>
@@ -109,9 +117,9 @@ export function Projects() {
                   {/* Icon */}
                   <div 
                     className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: `var(--${project.color})`, opacity: 0.15 }}
+                    style={{ backgroundColor: `var(--${project.color})`, opacity: 0.9 }}
                   >
-                    <project.icon className="w-8 h-8" style={{ color: `var(--${project.color})` }} />
+                    <project.icon className="w-8 h-8 text-white" />
                   </div>
                   
                   {/* Content */}

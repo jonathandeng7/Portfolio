@@ -82,7 +82,15 @@ export function Experience() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <span className="text-accent-sage font-medium text-sm uppercase tracking-wider">Experience</span>
+          <div className="flex items-center gap-4 mb-4">
+            <div 
+              className="w-12 h-12 rounded-xl flex items-center justify-center"
+              style={{ backgroundColor: 'var(--accent-sage)', opacity: 0.9 }}
+            >
+              <Briefcase className="w-6 h-6 text-white" />
+            </div>
+            <span className="text-accent-sage font-medium text-sm uppercase tracking-wider">Experience</span>
+          </div>
           <h2 className="text-4xl sm:text-5xl leading-tight mt-2 text-foreground">
             <span className="font-serif italic">Work</span>{' '}
             <span className="font-bold">Experience</span>
@@ -111,9 +119,9 @@ export function Experience() {
                 <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-6">
                   <div 
                     className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: `var(--${exp.color})`, opacity: 0.15 }}
+                    style={{ backgroundColor: `var(--${exp.color})`, opacity: 0.9 }}
                   >
-                    <exp.icon className="w-7 h-7" style={{ color: `var(--${exp.color})` }} />
+                    <exp.icon className="w-7 h-7 text-white" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-foreground">{exp.company}</h3>

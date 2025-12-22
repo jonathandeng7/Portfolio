@@ -20,6 +20,7 @@ export default {
       fontFamily: {
         bagel: ['Bagel Fat One', 'cursive'],
         serif: ['Syne', 'sans-serif'],
+        futuristic: ['Orbitron', 'monospace'],
       },
       colors: {
         border: "var(--border)",

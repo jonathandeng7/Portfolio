@@ -1,8 +1,51 @@
-'use client'
+import * as React from 'react';
+import { motion } from 'framer-motion';
+import { Menu, X, Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import {
+  FloatingIconsHero,
+  type FloatingIconsHeroProps,
+} from '@/components/ui/floating-icons-hero-section';
 
-import { motion } from 'framer-motion'
-import { Menu, X, Github, Linkedin, Mail, ArrowDown } from 'lucide-react'
-import { useState, useEffect } from 'react'
+// Tech stack icons using lucide-react
+import {
+  Code,
+  Brain,
+  Smartphone,
+  Database,
+  GitBranch,
+  Terminal,
+  Globe,
+  Layers,
+  Cpu,
+  Zap,
+  Rocket,
+  Target,
+  Heart,
+  Eye,
+  TrendingUp,
+  Award
+} from 'lucide-react';
+
+// Define the floating icons for the hero
+const heroIcons: FloatingIconsHeroProps['icons'] = [
+  { id: 1, icon: Code, className: 'top-[10%] left-[10%]' },
+  { id: 2, icon: Brain, className: 'top-[20%] right-[8%]' },
+  { id: 3, icon: Smartphone, className: 'top-[80%] left-[10%]' },
+  { id: 4, icon: Database, className: 'bottom-[10%] right-[10%]' },
+  { id: 5, icon: GitBranch, className: 'top-[5%] left-[30%]' },
+  { id: 6, icon: Terminal, className: 'top-[5%] right-[30%]' },
+  { id: 7, icon: Globe, className: 'bottom-[8%] left-[25%]' },
+  { id: 8, icon: Layers, className: 'top-[40%] left-[15%]' },
+  { id: 9, icon: Cpu, className: 'top-[75%] right-[25%]' },
+  { id: 10, icon: Zap, className: 'top-[90%] left-[70%]' },
+  { id: 11, icon: Rocket, className: 'top-[50%] right-[5%]' },
+  { id: 12, icon: Target, className: 'top-[55%] left-[5%]' },
+  { id: 13, icon: Heart, className: 'top-[5%] left-[55%]' },
+  { id: 14, icon: Eye, className: 'bottom-[5%] right-[45%]' },
+  { id: 15, icon: TrendingUp, className: 'top-[25%] right-[20%]' },
+  { id: 16, icon: Award, className: 'top-[60%] left-[30%]' },
+];
 
 export function Hero() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -35,256 +78,154 @@ export function Hero() {
     { href: '#contact', label: 'Contact' },
   ]
 
+  const socialLinks = [
+    { 
+      icon: Github, 
+      href: 'https://github.com/jonathandeng7',
+      label: 'GitHub' 
+    },
+    { 
+      icon: Linkedin, 
+      href: 'https://www.linkedin.com/in/jonathandeng/',
+      label: 'LinkedIn' 
+    },
+    { 
+      icon: Mail, 
+      href: 'mailto:jonathandeng@ufl.edu',
+      label: 'Email' 
+    },
+  ]
+
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-background">
-      {/* Organic blob shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.1, 1],
-            rotate: [0, 5, 0],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-32 -right-32 w-96 h-96 bg-accent-coral/8 rounded-full blur-3xl"
-        />
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.15, 1],
-            rotate: [0, -5, 0],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute top-1/3 -left-48 w-80 h-80 bg-accent-sage/10 rounded-full blur-3xl"
-        />
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.08, 1],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-          className="absolute bottom-20 right-1/4 w-64 h-64 bg-accent-ochre/8 rounded-full blur-3xl"
-        />
-      </div>
-      
-      {/* Navbar */}
+    <div className="relative w-full overflow-hidden">
+      {/* Navigation */}
       <motion.nav
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="fixed top-0 left-0 right-0 w-full z-[110]"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled 
+            ? 'bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm' 
+            : 'bg-transparent'
+        }`}
       >
-        <div 
-          className={`w-full px-6 sm:px-8 lg:px-12 py-4 transition-all duration-300 ease-out ${
-            isScrolled 
-              ? 'bg-background/95 backdrop-blur-xl border-b border-border' 
-              : 'bg-transparent'
-          }`}
-        >
-          <div className="flex items-center justify-between max-w-6xl mx-auto">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
+          <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: -2 }}
-              className="flex items-center cursor-pointer"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="text-xl lg:text-2xl font-bold text-foreground"
             >
-              <span className="font-serif text-2xl italic text-foreground">jd</span>
+              JD
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-8">
               {navLinks.map((link) => (
-                <a 
-                  key={link.href}
-                  href={link.href} 
-                  className="text-muted-foreground hover:text-foreground font-medium gentle-animation relative group"
-                >
-                  {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-coral group-hover:w-full transition-all duration-300" />
-                </a>
-              ))}
-            </div>
-
-            {/* Social Links + Mobile Menu */}
-            <div className="flex items-center space-x-4">
-              <a 
-                href="https://github.com/jonathandeng7" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hidden sm:block text-muted-foreground hover:text-accent-coral gentle-animation hover:rotate-6"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/jonathandeng/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hidden sm:block text-muted-foreground hover:text-accent-blue gentle-animation hover:-rotate-6"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              
-              {/* Mobile Menu Button */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-2 text-foreground hover:bg-muted rounded-lg gentle-animation"
-              >
-                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </button>
-            </div>
-          </div>
-        </div>
-      </motion.nav>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="md:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-[100]"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="md:hidden fixed top-0 right-0 h-full w-72 bg-background border-l border-border z-[105] p-6 pt-20"
-          >
-            <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <a
+                <motion.a
                   key={link.href}
                   href={link.href}
-                  className="text-foreground hover:text-accent-coral font-medium text-lg py-2 gentle-animation"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  whileHover={{ y: -2 }}
+                  className="text-foreground/80 hover:text-foreground transition-colors font-medium text-sm uppercase tracking-wider"
                 >
                   {link.label}
-                </a>
+                </motion.a>
               ))}
-              <div className="flex items-center space-x-4 pt-4 border-t border-border">
-                <a 
-                  href="https://github.com/jonathandeng7" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground"
+            </div>
+
+            {/* Social Links */}
+            <div className="hidden lg:flex items-center space-x-4">
+              {socialLinks.map((social) => (
+                <motion.a
+                  key={social.href}
+                  href={social.href}
+                  target={social.href.startsWith('http') ? '_blank' : undefined}
+                  rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label={social.label}
                 >
-                  <Github className="w-5 h-5" />
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/jonathandeng/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground"
+                  <social.icon className="w-5 h-5" />
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </motion.button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border/50"
+          >
+            <div className="px-6 py-8 space-y-6">
+              {navLinks.map((link, index) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-lg font-medium text-foreground hover:text-accent-coral transition-colors"
                 >
-                  <Linkedin className="w-5 h-5" />
-                </a>
+                  {link.label}
+                </motion.a>
+              ))}
+              <div className="flex space-x-6 pt-4">
+                {socialLinks.map((social) => (
+                  <motion.a
+                    key={social.href}
+                    href={social.href}
+                    target={social.href.startsWith('http') ? '_blank' : undefined}
+                    rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-6 h-6" />
+                  </motion.a>
+                ))}
               </div>
             </div>
           </motion.div>
-        </>
-      )}
+        )}
+      </motion.nav>
 
-      {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 sm:px-8 lg:px-12">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mb-6"
-          >
-            <span className="inline-block px-4 py-2 bg-accent-coral/10 text-accent-coral rounded-full text-sm font-medium">
-              👋 Hey there, I'm
-            </span>
-          </motion.div>
-          
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-5xl sm:text-6xl lg:text-7xl leading-tight mb-8 text-foreground"
-          >
-            <span className="font-serif italic">Jonathan</span>{' '}
-            <span className="font-bold">Deng</span>
-          </motion.h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto mb-4 leading-relaxed"
-          >
-            I'm a CS student at UF who loves building things that{' '}
-            <span className="text-foreground font-medium">actually help people</span>.
-          </motion.p>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-            className="text-lg text-muted-foreground max-w-xl mx-auto mb-10"
-          >
-            From hackathon projects that won awards to apps that make fitness social.
-            I like turning ideas into real, working software.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-wrap gap-4 justify-center"
-          >
-            <a
-              href="#projects"
-              className="group bg-foreground text-background font-semibold px-8 py-3.5 rounded-full hover:bg-foreground/90 gentle-animation flex items-center gap-2"
-            >
-              See My Work
-              <motion.span 
-                className="inline-block"
-                animate={{ x: [0, 4, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                →
-              </motion.span>
-            </a>
-            <a
-              href="#contact"
-              className="border-2 border-border text-foreground font-semibold px-8 py-3.5 rounded-full hover:border-accent-coral hover:text-accent-coral gentle-animation"
-            >
-              Let's Chat
-            </a>
-          </motion.div>
-        </div>
-        
-        {/* Scroll indicator */}
-        <motion.a
-          href="#about"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground gentle-animation cursor-pointer"
+      {/* Floating Icons Hero Section */}
+      <FloatingIconsHero
+        title="Jonathan Deng"
+        subtitle="Full-Stack Developer passionate about creating accessible, innovative solutions that make a real impact. From AI to mobile apps, I build technology that matters."
+        ctaText="Explore My Work"
+        ctaHref="#about"
+        icons={heroIcons}
+        className="relative"
+      />
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="flex flex-col items-center text-muted-foreground"
         >
-          <span className="text-sm font-medium">Scroll down</span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <ArrowDown className="w-5 h-5" />
-          </motion.div>
-        </motion.a>
+          <span className="text-sm mb-2 font-medium">Scroll to explore</span>
+          <ArrowDown className="w-5 h-5" />
+        </motion.div>
       </div>
-      
-      {/* Hand-drawn squiggle decoration */}
-      <svg className="absolute bottom-32 left-10 w-24 h-12 text-accent-coral/30 hidden lg:block" viewBox="0 0 100 40">
-        <motion.path
-          d="M5 20 Q 15 5, 25 20 T 45 20 T 65 20 T 85 20 T 95 20"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, delay: 1.5 }}
-        />
-      </svg>
     </div>
   )
 }
